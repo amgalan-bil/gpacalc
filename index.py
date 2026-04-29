@@ -96,19 +96,22 @@ else:
 
 print("")
 print("IMPROVEMENT TIPS")
-tips = []
 
-for i in range(len(grades)):
-    if grades[i] == "F" or grades[i] == "D":
-        tips.append("Study more for " + subjects[i])
-    elif grades[i] == "C":
-        tips.append("A bit more effort in " + subjects[i] + " could get you a B")
+def print_tips(grades, subjects):
+    tips = []
+    for i in range(len(grades)):
+        if grades[i] == "F" or grades[i] == "D":
+            tips.append("Study more for " + subjects[i])
+        elif grades[i] == "C":
+            tips.append("A bit more effort in " + subjects[i] + " could get you a B")
 
-if len(tips) == 0:
-    print("No major issues - maintain your grades!")
-else:
-    for i in range(len(tips)):
-        print(str(i + 1) + ". " + tips[i])
+    if len(tips) == 0:
+        print("No major issues - maintain your grades!")
+    else:
+        for i in range(len(tips)):
+            print(str(i + 1) + ". " + tips[i])
+
+print_tips(grades, subjects)
 
 print("")
 print("Good luck " + name + "!")
